@@ -123,8 +123,8 @@ Here are the dependency injections for this controller. CalendarService is the s
         start: vm.selectedDate.local(),
         end: vm.selectedDate.local(),
         className: ['coffeeBreak'],
-        stick: true
-        private:
+        stick: true,
+        private: eventPrivate
       });
 
       newEvent.$save(function(data) {
