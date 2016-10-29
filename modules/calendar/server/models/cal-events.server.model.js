@@ -30,6 +30,10 @@ var CalEventSchema = new Schema({
     default: '',
     trim: true
   },
+  eventPrivate: {
+    type: Boolean,
+    default: false,
+  },
   allDay: Boolean,
   start: Date,
   end: Date,
