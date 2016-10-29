@@ -454,7 +454,7 @@ gulp.task('test:coverage', function (done) {
 
 // Run the project in development mode
 gulp.task('default', function (done) {
-  runSequence('env:dev', ['copyLocalEnvConfig', 'makeUploadsDir'], 'lint', ['nodemon', 'watch'], done);
+  runSequence('env:dev', ['copyLocalEnvConfig', 'makeUploadsDir'], 'wiredep', 'lint', ['nodemon', 'watch'], done);
 });
 
 // Run the project in debug mode
