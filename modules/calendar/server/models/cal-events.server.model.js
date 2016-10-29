@@ -30,10 +30,6 @@ var CalEventSchema = new Schema({
     default: '',
     trim: true
   },
-  eventPrivate: {
-    type: Boolean,
-    default: false
-  },
   allDay: Boolean,
   start: Date,
   end: Date,
@@ -42,7 +38,8 @@ var CalEventSchema = new Schema({
     type: Schema.ObjectId,
     ref: 'User'
   },
-  className: [String]
+  className: [String],
+  priv: Boolean
 });
 
 mongoose.model('CalEvent', CalEventSchema);

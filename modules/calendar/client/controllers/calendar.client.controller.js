@@ -93,7 +93,7 @@ Here are the dependency injections for this controller. CalendarService is the s
     };
 
     /* add custom event*/
-    vm.addEvent = function(eventPrivate) {
+    vm.addEvent = function(isPrivate) {
       /*
       We could just create a new event like the newEvent object below, using fullcalendar
       format. However, this wouldn't allow us to take advantage of Angular.js
@@ -117,15 +117,13 @@ Here are the dependency injections for this controller. CalendarService is the s
       event object. Check out the CalendarService() Angular service to see
       how this is created, which you'll find in /client/services/calendar.client.service.js
       */
-
-      var eventType = eventPrivate ? 'private' : 'public';
       var newEvent = new CalendarService({
         title: 'Coffee Break',
         start: vm.selectedDate.local(),
         end: vm.selectedDate.local(),
-        className: ['coffeeBreak', 'eventPrivate'],
+        className: ['coffeeBreak', 'isPrivate'],
         stick: true,
-        private: eventPrivate
+        priv: isPrivate
       });
 
       newEvent.$save(function(data) {

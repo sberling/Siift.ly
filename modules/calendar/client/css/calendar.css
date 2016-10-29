@@ -6,7 +6,7 @@ input.eventtext {
   width: 140px
 }
 
-#private {
-  background-color: #e9a123
-  border: #724cb2
+.private{
+  background-image: linear-gradient(to bottom, #e9a123 0%, #e9a888 100%);
+  border: #724cb2;
 }
