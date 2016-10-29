@@ -79,17 +79,30 @@ exports.delete = function (req, res) {
 /**
  * List of Articles
  */
-exports.list = function (req, res) {
-  CalEvent.find().sort('-created').populate('user', 'displayName').exec(function (err, calEvents) {
-    if (err) {
-      return res.status(400).send({
-        message: errorHandler.getErrorMessage(err)
-      });
-    } else {
-      res.json(calEvents);
-    }
-  });
-};
+ exports.list = function (req, res) {
+   if(req.user){
+     var userId = req.user._id;
+     CalEvent.find( {$or: [{eventPrivate: false},  {user: userId}]}).sort('-created').populate('user', 'displayName').exec(function (err, calEvents) {
+       if (err) {
+         return res.status(400).send({
+           message: errorHandler.getErrorMessage(err)
+         });
+       } else {
+         res.json(calEvents);
+       }
+     });
+   } else{
+     CalEvent.find({eventPrivate: true}).sort('-created').populate('user', 'displayName').exec(function (err, calEvents) {
+       if (err) {
+         return res.status(400).send({
+           message: errorHandler.getErrorMessage(err)
+         });
+       } else {
+         res.json(calEvents);
+       }
+     });
+   };
+ }
 
 /**
  * Article middleware
