@@ -5,3 +5,8 @@ td.select-highlight {
 input.eventtext {
   width: 140px
 }
+
+#private {
+  background-color: #e9a123
+  border: #724cb2
+}
