@@ -118,11 +118,12 @@ Here are the dependency injections for this controller. CalendarService is the s
       how this is created, which you'll find in /client/services/calendar.client.service.js
       */
 
+      var eventType = eventPrivate ? 'private' : 'public';
       var newEvent = new CalendarService({
         title: 'Coffee Break',
         start: vm.selectedDate.local(),
         end: vm.selectedDate.local(),
-        className: ['coffeeBreak'],
+        className: ['coffeeBreak', 'eventPrivate'],
         stick: true,
         private: eventPrivate
       });
