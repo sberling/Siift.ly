@@ -15,15 +15,21 @@ exports.create = function (req, res) {
   var calEvent = new CalEvent(req.body);
   calEvent.user = req.user;
 
-  calEvent.save(function (err) {
-    if (err) {
-      return res.status(400).send({
-        message: errorHandler.getErrorMessage(err)
-      });
-    } else {
-      res.json(calEvent);
-    }
-  });
+  if (calEvent.user || !calEvent.priv) {
+    calEvent.save(function (err) {
+      if (err) {
+        return res.status(400).send({
+          message: errorHandler.getErrorMessage(err)
+        });
+      } else {
+        res.json(calEvent);
+      }
+    });
+  } else {
+    return res.status(403).send({
+      message: 'Must be logged in to save a private event'
+    });
+  }
 };
 
 /**
@@ -79,30 +85,32 @@ exports.delete = function (req, res) {
 /**
  * List of Articles
  */
- exports.list = function (req, res) {
-   if(req.user){
-     var userId = req.user._id;
-     CalEvent.find( {$or: [{eventPrivate: false},  {user: userId}]}).sort('-created').populate('user', 'displayName').exec(function (err, calEvents) {
-       if (err) {
-         return res.status(400).send({
-           message: errorHandler.getErrorMessage(err)
-         });
-       } else {
-         res.json(calEvents);
-       }
-     });
-   } else{
-     CalEvent.find({eventPrivate: true}).sort('-created').populate('user', 'displayName').exec(function (err, calEvents) {
-       if (err) {
-         return res.status(400).send({
-           message: errorHandler.getErrorMessage(err)
-         });
-       } else {
-         res.json(calEvents);
-       }
-     });
-   };
- }
+exports.list = function (req, res) {
+  if (req.user) {   // if the user is logged in
+    var userId = req.user._id;
+      // Show the public events and the private events that have the correct userId
+    CalEvent.find({ $or: [{ priv: false }, { user: userId }] }).sort('-created').populate('user', 'displayName').exec(function (err, calEvents) {
+      if (err) {
+        return res.status(400).send({
+          message: errorHandler.getErrorMessage(err)
+        });
+      } else {
+        res.json(calEvents);
+      }
+    });
+  } else { // if the user is logged out
+     // otherwise show just public events
+    CalEvent.find({ priv: false }).sort('-created').populate('user', 'displayName').exec(function (err, calEvents) {
+      if (err) {
+        return res.status(400).send({
+          message: errorHandler.getErrorMessage(err)
+        });
+      } else {
+        res.json(calEvents);
+      }
+    });
+  }
+};
 
 /**
  * Article middleware

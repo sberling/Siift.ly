@@ -120,35 +120,35 @@ describe('CalEvent CRUD tests', function () {
       });
   });
 
-/*
-  it('should be able to save a public calendar event if not logged in', function (done) {
-    calEvent.public = true;
-    agent.post('/api/calendar')
-      .send(calEvent)
-      .expect(200)
-      .end(function (calEventSaveErr, calEventSaveRes) {
-        // Call the assertion callback
-        if (calEventSaveErr) {
-          return done(calEventSaveErr);
-        }
-        done();
-      });
-  });
 
-  it('should not be able to save a private calendar event if not logged in', function (done) {
-    calEvent.public = false;
-    agent.post('/api/calendar')
-      .send(calEvent)
-      .expect(403)
-      .end(function (calEventSaveErr, calEventSaveRes) {
-        // Set message assertion
-        (calEventSaveRes.body.message).should.match('Must be logged in to save a private event');
-
-        // Handle calEvent save error
-        done(calEventSaveErr);
-      });
-  });
-*/
+  // it('should be able to save a public calendar event if not logged in', function (done) {
+  //   calEvent.priv = false;
+  //   agent.post('/api/calendar')
+  //     .send(calEvent)
+  //     .expect(200)
+  //     .end(function (calEventSaveErr, calEventSaveRes) {
+  //       // Call the assertion callback
+  //       if (calEventSaveErr) {
+  //         return done(calEventSaveErr);
+  //       }
+  //       done();
+  //     });
+  // });
+  //
+  // it('should not be able to save a private calendar event if not logged in', function (done) {
+  //   calEvent.priv = true;
+  //   agent.post('/api/calendar')
+  //     .send(calEvent)
+  //     .expect(403)
+  //     .end(function (calEventSaveErr, calEventSaveRes) {
+  //       // Set message assertion
+  //       (calEventSaveRes.body.message).should.match('Must be logged in to save a private event');
+  //
+  //       // Handle calEvent save error
+  //       done(calEventSaveErr);
+  //     });
+  // });
+  //
 
   it('should not be able to save a calendar event if no title is provided', function (done) {
     // Invalidate title field
