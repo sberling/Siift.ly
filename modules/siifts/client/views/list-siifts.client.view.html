@@ -1,0 +1,18 @@
+<section>
+  <div class="page-header">
+    <h1>Siifts</h1>
+  </div>
+  <div class="list-group">
+    <a ng-repeat="siift in vm.siifts" ui-sref="siifts.view({ siiftId: siift._id })" class="list-group-item">
+      <small class="list-group-item-text">
+        Posted on
+        <span ng-bind="siift.created | date:'mediumDate'"></span>
+        by
+        <span ng-if="siift.user" ng-bind="siift.user.displayName"></span>
+        <span ng-if="!siift.user">Deleted User</span>
+      </small>
+      <h4 class="list-group-item-heading" ng-bind="siift.title"></h4>
+      <p class="list-group-item-text" ng-bind="siift.content"></p>
+    </a>
+  </div>
+</section>
