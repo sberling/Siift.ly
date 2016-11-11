@@ -1,18 +1,26 @@
-<section>
+﻿<section>
   <div class="page-header">
-    <h1>Siifts</h1>
+    <h1>
+      Siifts
+      <a class="btn btn-primary pull-right" data-ui-sref="admin.siifts.create">
+        <i class="glyphicon glyphicon-plus"></i>
+      </a>
+    </h1>
   </div>
   <div class="list-group">
-    <a ng-repeat="siift in vm.siifts" ui-sref="siifts.view({ siiftId: siift._id })" class="list-group-item">
+    <a data-ng-repeat="siift in vm.siifts" data-ui-sref="admin.siifts.edit({siiftId: siift._id})" class="list-group-item">
       <small class="list-group-item-text">
         Posted on
-        <span ng-bind="siift.created | date:'mediumDate'"></span>
+        <span data-ng-bind="siift.created | date:'mediumDate'"></span>
         by
         <span ng-if="siift.user" ng-bind="siift.user.displayName"></span>
         <span ng-if="!siift.user">Deleted User</span>
       </small>
-      <h4 class="list-group-item-heading" ng-bind="siift.title"></h4>
-      <p class="list-group-item-text" ng-bind="siift.content"></p>
+      <h4 class="list-group-item-heading" data-ng-bind="siift.title"></h4>
+      <p class="list-group-item-text" data-ng-bind="siift.content"></p>
     </a>
+  </div>
+  <div class="alert alert-warning text-center" data-ng-if="siifts.$resolved && !siifts.length">
+    No siifts yet, why don't you <a data-ui-sref="admin.siifts.create">create one</a>?
   </div>
 </section>

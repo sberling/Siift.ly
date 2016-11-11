@@ -53,7 +53,7 @@
         });
 
         it('Should have templateUrl', function () {
-          expect(liststate.templateUrl).toBe('modules/siifts/client/views/admin/list-siifts.client.view.html');
+          expect(liststate.templateUrl).toBe('modules/siifts/client/views/list-siifts.client.view.html');
         });
       });
 
@@ -64,7 +64,7 @@
 
         beforeEach(inject(function ($controller, $state, $templateCache) {
           createstate = $state.get('admin.siifts.create');
-          $templateCache.put('modules/siifts/client/views/admin/form-siift.client.view.html', '');
+          $templateCache.put('modules/siifts/client/views/form-siift.client.view.html', '');
 
           // Create mock siift
           mockSiift = new SiiftsService();
@@ -99,7 +99,7 @@
         });
 
         it('Should have templateUrl', function () {
-          expect(createstate.templateUrl).toBe('modules/siifts/client/views/admin/form-siift.client.view.html');
+          expect(createstate.templateUrl).toBe('modules/siifts/client/views/form-siift.client.view.html');
         });
       });
 
@@ -110,7 +110,7 @@
 
         beforeEach(inject(function ($controller, $state, $templateCache) {
           editstate = $state.get('admin.siifts.edit');
-          $templateCache.put('modules/siifts/client/views/admin/form-siift.client.view.html', '');
+          $templateCache.put('modules/siifts/client/views/form-siift.client.view.html', '');
 
           // Create mock siift
           mockSiift = new SiiftsService({
@@ -150,7 +150,7 @@
         });
 
         it('Should have templateUrl', function () {
-          expect(editstate.templateUrl).toBe('modules/siifts/client/views/admin/form-siift.client.view.html');
+          expect(editstate.templateUrl).toBe('modules/siifts/client/views/form-siift.client.view.html');
         });
 
         xit('Should go to unauthorized route', function () {

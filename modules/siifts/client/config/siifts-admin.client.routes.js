@@ -16,7 +16,7 @@
       })
       .state('admin.siifts.list', {
         url: '',
-        templateUrl: 'modules/siifts/client/views/admin/list-siifts.client.view.html',
+        templateUrl: 'modules/siifts/client/views/list-siifts.client.view.html',
         controller: 'SiiftsAdminListController',
         controllerAs: 'vm',
         data: {
@@ -25,7 +25,7 @@
       })
       .state('admin.siifts.create', {
         url: '/create',
-        templateUrl: 'modules/siifts/client/views/admin/form-siift.client.view.html',
+        templateUrl: 'modules/siifts/client/views/form-siift.client.view.html',
         controller: 'SiiftsAdminController',
         controllerAs: 'vm',
         data: {
@@ -37,7 +37,7 @@
       })
       .state('admin.siifts.edit', {
         url: '/:siiftId/edit',
-        templateUrl: 'modules/siifts/client/views/admin/form-siift.client.view.html',
+        templateUrl: 'modules/siifts/client/views/form-siift.client.view.html',
         controller: 'SiiftsAdminController',
         controllerAs: 'vm',
         data: {
