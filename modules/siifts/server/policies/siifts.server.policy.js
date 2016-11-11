@@ -13,7 +13,7 @@ acl = new acl(new acl.memoryBackend());
  */
 exports.invokeRolesPolicies = function () {
   acl.allow([{
-    roles: ['user'],
+    roles: ['admin'],
     allows: [{
       resources: '/api/siifts',
       permissions: '*'
@@ -25,7 +25,7 @@ exports.invokeRolesPolicies = function () {
     roles: ['user'],
     allows: [{
       resources: '/api/siifts',
-      permissions: ['get']
+      permissions: '*'
     }, {
       resources: '/api/siifts/:siiftId',
       permissions: ['get']

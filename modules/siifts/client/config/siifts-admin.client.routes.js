@@ -20,7 +20,7 @@
         controller: 'SiiftsAdminListController',
         controllerAs: 'vm',
         data: {
-          roles: ['admin']
+          roles: ['user']
         }
       })
       .state('admin.siifts.create', {
@@ -29,7 +29,7 @@
         controller: 'SiiftsAdminController',
         controllerAs: 'vm',
         data: {
-          roles: ['admin']
+          roles: ['user']
         },
         resolve: {
           siiftResolve: newSiift
@@ -41,7 +41,7 @@
         controller: 'SiiftsAdminController',
         controllerAs: 'vm',
         data: {
-          roles: ['admin']
+          roles: ['user']
         },
         resolve: {
           siiftResolve: getSiift
