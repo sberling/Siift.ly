@@ -49,9 +49,23 @@ a:hover .header-profile-image {
   display: block;
   box-sizing: border-box;
   letter-spacing: 0.05em;
-  font-family: : lato,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: lato,"Helvetica Neue",Helvetica,Arial,sans-serif;
   line-height: 1.4285;
   color: #000;
+}
+
+#photoBG{
+  padding-right:0;
+  padding-left:0;
+  margin-right:auto;
+  margin-left:auto
+}
+
+.full-width-div {
+    position: fixed;
+    width: 100%;
+    height: auto;
+    left: 0;
 }
 
 .list-inline {
@@ -63,3 +77,13 @@ a:hover .header-profile-image {
     display: inline-block;
     padding-left: 5px;
     padding-right: 5px;
+}
+
+.navbar-brand {
+  padding: 0px;
+}
+.navbar-brand>img {
+  height: 100%;
+  padding: 15px;
+  width: auto;
+}
