@@ -37,7 +37,13 @@ exports.read = function (req, res) {
   // NOTE: This field is NOT persisted to the database, since it doesn't exist in the Siift model.
   siift.isCurrentUserOwner = !!(req.user && siift.user && siift.user._id.toString() === req.user._id.toString());
 
-  res.json(siift);
+  if (siift.isCurrentUserOwner) {
+    res.json(siift);
+  } else {
+    return res.status(403).send({
+      message: 'You do not have access to this Siift'
+    });
+  }
 };
 
 /**
@@ -81,7 +87,7 @@ exports.delete = function (req, res) {
  * List of Siifts
  */
 exports.list = function (req, res) {
-  Siift.find().sort('-created').populate('user', 'displayName').exec(function (err, siifts) {
+  Siift.find({ user: req.user._id }).sort('-created').populate('user', 'displayName').exec(function (err, siifts) {
     if (err) {
       return res.status(400).send({
         message: errorHandler.getErrorMessage(err)
