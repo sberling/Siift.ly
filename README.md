@@ -16,6 +16,6 @@ We did not encounter any significant issues in implementing the Calendar module.
 ## Team Members
 Alex Hsu, Sam Berling, Matthew Moreno
 
-[Homepage]: https://github.com/UPS-CSCI240-F16/IterationNaN/blob/master/Screenshots/Homepage "Screenshot of Homepage"
-[Edit_Siift]: https://github.com/UPS-CSCI240-F16/IterationNaN/blob/master/Screenshots/Edit_Siift "Screenshot of Siift Edit Page"
-[Siift_List]: https://github.com/UPS-CSCI240-F16/IterationNaN/blob/master/Screenshots/Siift_List "Screenshot of Homepage"
+[Homepage]: https://github.com/UPS-CSCI240-F16/IterationNaN/blob/master/Screenshots/Homepage.png "Screenshot of Homepage"
+[Edit_Siift]: https://github.com/UPS-CSCI240-F16/IterationNaN/blob/master/Screenshots/Edit_Siift.png "Screenshot of Siift Edit Page"
+[Siift_List]: https://github.com/UPS-CSCI240-F16/IterationNaN/blob/master/Screenshots/Siift_List.png "Screenshot of Homepage"
