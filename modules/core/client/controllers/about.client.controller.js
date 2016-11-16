@@ -5,7 +5,7 @@
     .module('core')
     .controller('AboutController', AboutController);
 
-  function HomeController() {
+  function AboutController() {
     var vm = this;
   }
 }());
