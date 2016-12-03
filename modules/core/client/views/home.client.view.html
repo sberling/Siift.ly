@@ -1,13 +1,17 @@
-<html ng-app="simpsonsQuote">
 <section>
   <!--to do: make full width (ideal), AND set as background via css so we can overlay text, see ginger.io-->
-<!-- <div class="full-width-div">
-  <img alt="Siift.ly Logo" class="img-responsive text-center" src="modules/core/client/img/home/head.jpg"/>
-</div> -->
-<!-- Old Jumbotron-->
+
+<script>
+  $(document).ready(function(){
+        $.getJSON("/api/quotes/getquote", function(result){
+            $("quote").append(result);
+        });
+  });
+</script>
+
   <div class="jumbotron text-center">
-    <div ng-controller="randomQuote" > <i> Example Quote Here </i> </div>
-    <div> -- Author Here </div>
+
+    <quote></quote>
     <div class="row">
       <div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-12">
         <img alt="Siift.ly Logo" class="img-responsive text-center" src="modules/core/client/img/brand/logo.png" />
