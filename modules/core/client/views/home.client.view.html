@@ -1,4 +1,4 @@
-<html>
+<html ng-app="simpsonsQuote">
 <section>
   <!--to do: make full width (ideal), AND set as background via css so we can overlay text, see ginger.io-->
 <!-- <div class="full-width-div">
@@ -6,6 +6,8 @@
 </div> -->
 <!-- Old Jumbotron-->
   <div class="jumbotron text-center">
+    <div ng-controller="randomQuote" > <i> Example Quote Here </i> </div>
+    <div> -- Author Here </div>
     <div class="row">
       <div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-12">
         <img alt="Siift.ly Logo" class="img-responsive text-center" src="modules/core/client/img/brand/logo.png" />
@@ -25,7 +27,7 @@
   </div>
   <div>
     <h2>Welcome to Sifft!</h2>
-    <p>Siift is an indea jounral that will change your life!<p>
+    <p>Siift is an idea jounral that will change your life!<p>
     <p>Providing a place to store your ideas is just part of our offering.</p>
     <ul>
       <li>
@@ -84,3 +86,4 @@
     </p>
   </div>
 </section>
+<script src="js/index.js"></script>
