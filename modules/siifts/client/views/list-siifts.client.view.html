@@ -9,7 +9,9 @@
   </div>
   <div class="list-group">
     <a data-ng-repeat="siift in vm.siifts" data-ui-sref="admin.siifts.edit({siiftId: siift._id})" class="list-group-item">
-      <small class="list-group-item-text">
+      <div width=100% id="block_container">
+      <div align=left>
+      <small class="list-group-item-text" display="inline">
         Posted on
         <span data-ng-bind="siift.created | date:'mediumDate'"></span>
         by
@@ -20,6 +22,11 @@
       <!--Non functional line that supposedly should add tags to list view-->
        <p class="list-group-item-text" data-ng-bind="siift.tags"></p>
       <p class="list-group-item-text" data-ng-bind="siift.content"></p>
+      </div>
+      <div align=right>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/11/Cheetah_Kruger.jpg" alt="Cheetah!" height=100px />
+      </div>
+    </div>
     </a>
   </div>
   <div class="alert alert-warning text-center" data-ng-if="siifts.$resolved && !siifts.length">
