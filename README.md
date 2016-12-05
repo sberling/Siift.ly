@@ -1,8 +1,8 @@
 Live Heroku app: [here](https://iterationnan.herokuapp.com/).
 
 ## Iteration 3
-For this Iteration we began to lay the groundwork for our major features. We encountered a few problems with linking our quotes database to our front page, but it will be fully functional by the next Iteration. As mentioned earlier, this Iteration was all about finishing up open items from the Iteration 1, and preparing for Iteration 4. Alex fully implemented tagging functionality, added an About page, and updated the main menu bar.
-Matthew created and uploaded over 100 quotes and put them into mlab. Matthew also implemented basic geolocation to support Iteration 4. Sammy created the schema/controller for the quotes display, and put a placeholder on our homepage (will be fully functional Iteration 4).
+For this Iteration we implemented our random quote story. We encountered a few problems with linking our quotes database to our front page, but after some hard work (thanks Matthew!) we got it working. Wrapped up things from Iteration 1, and began laying the groundwork for Iteration 4. Alex fully implemented tagging functionality, added an About page, and updated the main menu bar. Sammy created the schema/controller for the quotes display.
+Matthew created and uploaded over 100 quotes and put them into mlab. Matthew also created the quotes module, and fully implemented what Sammy had done.
 
 ![Quotes on homepage, sorta!](/Screenshots/Iteration 3/ExampleQuote.PNG)
 ![Tags and cheetahs, wow!](/Screenshots/Iteration 3/SiiftsList.png)
