@@ -23,13 +23,29 @@
         </p>
         <p class="list-group-item-text" data-ng-bind="siift.content"></p>
       </div>
-      <div class="pull-right">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/1/11/Cheetah_Kruger.jpg" alt="Cheetah!" height=100px />
+      <div id="map" class="pull-right">
+        <img src="http://maps.googleapis.com/maps/api/staticmap?center=47.263690,-122.483215&amp;zoom=10&amp;size=400x350&amp;sensor=false&amp;markers=47.263690,-122.483215&amp;scale=2&amp;key=AIzaSyAW30yH0mrXRwYMoF0_RAZsF5xBcIwlqBo" alt="Cheetah!" height=200px />
       </div>
-       <div style="clear:both;"></div>
+      <div style="clear:both;"></div>
     </a>
   </div>
   <div class="alert alert-warning text-center" data-ng-if="siifts.$resolved && !siifts.length">
     No siifts yet, why don't you <a data-ui-sref="admin.siifts.create">create one</a>?
   </div>
+  <!-- <script>
+      function initMap() {
+        var uluru = {lat: -25.363, lng: 131.044};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAW30yH0mrXRwYMoF0_RAZsF5xBcIwlqBo&callback=initMap">
+    </script> -->
 </section>
