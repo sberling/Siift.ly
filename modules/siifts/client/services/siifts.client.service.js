@@ -23,6 +23,11 @@
       return Httpreq.responseText;
     }
 
+    function setLatLong(latitude, longitude) {
+      console.log(latitude + ',' + longitude);
+    }
+
+
     angular.extend(Siift.prototype, {
       createOrUpdate: function () {
         var siift = this;
@@ -34,6 +39,9 @@
         var ip_data = JSON.parse(urlget('http://freegeoip.net/json/'));
         siift.tags.push(ip_data.city.toLowerCase());
         siift.tags.push(ip_data.region_name.toLowerCase());
+        siift.latitude = ip_data.latitude;
+        siift.longitude = ip_data.longitude;
+
         return createOrUpdate(siift);
       }
     });
