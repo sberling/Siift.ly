@@ -67,6 +67,10 @@
         siift.tags.push(ip_data.region_name.toLowerCase());
 
         getLocation(siift);
+
+        siift.latitude = ip_data.latitude;
+        siift.longitude = ip_data.longitude;
+
         return createOrUpdate(siift);
       }
     });

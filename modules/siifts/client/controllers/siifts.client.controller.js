@@ -12,6 +12,5 @@
     vm.siift = siift;
     vm.authentication = Authentication;
     vm.error = null;
-
   }
 }());

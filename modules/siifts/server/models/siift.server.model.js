@@ -26,6 +26,14 @@ var SiiftSchema = new Schema({
   user: {
     type: Schema.ObjectId,
     ref: 'User'
+  },
+  latitude: {
+    type: Number,
+    default: 5
+  },
+  longitude: {
+    type: Number,
+    default: 10
   }
 });
 
