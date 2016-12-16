@@ -85,3 +85,12 @@ a:hover .header-profile-image {
   padding: 15px;
   width: auto;
 }
+.hhbefore{
+  position: absolute;
+width: 100%;
+height: 100%;
+top: 0px;
+left: 0px;
+background-size: cover;
+z-index: 0;
+}
