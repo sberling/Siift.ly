@@ -4,14 +4,16 @@
 <section style="font-family: Montserrat">
   <div class="page-header">
     <h1>
-      Siifts
+      siift your ideas
+      <input type="text" name="filter" ng-model="textFilter" />
       <a class="btn btn-primary pull-right" data-ui-sref="admin.siifts.create">
         <i class="glyphicon glyphicon-plus"></i>
       </a>
     </h1>
   </div>
+  <span id="filter-count"></span>
   <div class="list-group">
-    <a data-ng-repeat="siift in vm.siifts" data-ui-sref="admin.siifts.edit({siiftId: siift._id})" class="list-group-item">
+    <a data-ng-repeat="siift in vm.siifts | filter : textFilter" data-ui-sref="admin.siifts.edit({siiftId: siift._id})" class="list-group-item">
       <div class="pull-left">
         <small class="list-group-item-text" display="inline">
           Posted on
