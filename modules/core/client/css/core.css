@@ -86,13 +86,13 @@ a:hover .header-profile-image {
   width: auto;
 }
 .hhbefore{
+  background-size: cover;
+  height: 100%;
+  left: 0px;
   position: absolute;
-width: 100%;
-height: 100%;
-top: 0px;
-left: 0px;
-background-size: cover;
-z-index: 0;
+  top: 0px;
+  width: 100%;
+  z-index: 0;
 }
 
 blockquote:before {
@@ -113,6 +113,6 @@ blockquote:after {
   vertical-align: -0.4em;
 }
 
-#normal{
-  font-weight: normal;
+#mLight{
+  font-family: 'Montserrat Light', arial;
 }
