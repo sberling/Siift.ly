@@ -11,13 +11,6 @@
   <div class="col-md-12">
     <form name="vm.form.siiftForm" class="form-horizontal" ng-submit="vm.save(vm.form.siiftForm.$valid)" novalidate>
       <fieldset>
-        <div class="form-group" show-errors>
-          <label class="control-label" for="title">Title</label>
-          <input name="title" type="text" ng-model="vm.siift.title" id="title" class="form-control" placeholder="Title" required>
-          <div ng-messages="vm.form.siiftForm.title.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Siift title is required.</p>
-          </div>
-        </div>
         <!--TAGS are below, currently they are required, treated as a string, will need model cleanup-->
         <div class="form-group" show-errors>
           <label class="control-label" for="tags">Tags</label>

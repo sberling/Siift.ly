@@ -5,9 +5,9 @@
     .module('siifts.services')
     .factory('SiiftsService', SiiftsService);
 
-  SiiftsService.$inject = ['$resource'];
+  SiiftsService.$inject = ['$resource', '$filter'];
 
-  function SiiftsService($resource) {
+  function SiiftsService($resource, $filter) {
     var Siift = $resource('api/siifts/:siiftId', {
       siiftId: '@_id'
     }, {
@@ -16,9 +16,21 @@
       }
     });
 
+    function urlget(yourUrl) {
+      var Httpreq = new XMLHttpRequest(); // a new request
+      Httpreq.open('GET', yourUrl, false);
+      Httpreq.send(null);
+      return Httpreq.responseText;
+    }
+
     angular.extend(Siift.prototype, {
       createOrUpdate: function () {
         var siift = this;
+        var day_of_week = $filter('date')(Date.now(), 'EEEE');
+        siift.tags.push(day_of_week.toLowerCase());
+        siift.tags.push($filter('timeOfDay')(Date.now()));
+        var weather_data = JSON.parse(urlget('http://api.wunderground.com/api/4dc1221e088aa9f8/conditions/q/autoip.json'));
+        siift.tags.push(weather_data.current_observation.weather.toLowerCase());
         return createOrUpdate(siift);
       }
     });

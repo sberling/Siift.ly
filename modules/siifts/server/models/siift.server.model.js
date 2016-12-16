@@ -14,12 +14,6 @@ var SiiftSchema = new Schema({
     type: Date,
     default: Date.now
   },
-  title: {
-    type: String,
-    default: '',
-    trim: true,
-    required: 'Title cannot be blank'
-  },
   // Currently tags are required, need to work on adding proper delimiting, tags as individual objects?
   tags: {
     type: [String]
