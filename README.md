@@ -1,5 +1,12 @@
 Live Heroku app: [here](https://iterationnan.herokuapp.com/).
 
+## Iteration 4
+For this Iteration we finished implementing all of our user stories. Most of the work for this iteration was for Siift organization/analytics, as well as front-end design. Sammy worked on a final fix for tags, and the geolocation maps display. Matthew implemnted metadata tagging using Weather Underground, and fixed the Siift displays for longer entries. Alex worked on front-end design (homepage, about page) and asset creation for those respective pages.
+
+![Homepage with quotes AND pretty pictures](/Screenshots/Iteration 4/Homepage.png)
+![About page laying out features, call to action](/Screenshots/Iteration 4/About.png)
+![Updated view and metadata](/Screenshots/Iteration 4/Siifts.png)
+
 ## Iteration 3
 For this Iteration we implemented our random quote story. We encountered a few problems with linking our quotes database to our front page, but after some hard work (thanks Matthew!) we got it working. Wrapped up things from Iteration 1, and began laying the groundwork for Iteration 4. Alex fully implemented tagging functionality, added an About page, and updated the main menu bar. Sammy created the schema/controller for the quotes display.
 Matthew created and uploaded over 100 quotes and put them into mlab. Matthew also created the quotes module, and fully implemented what Sammy had done.
