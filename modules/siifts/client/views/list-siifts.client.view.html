@@ -5,13 +5,12 @@
   <div class="page-header">
     <h1>
       siift your ideas
-      <input type="text" name="filter" ng-model="textFilter" />
+      <input type="text" name="filter" ng-model="textFilter" /> {{(vm.siifts | filter : textFilter).length}}
       <a class="btn btn-primary pull-right" data-ui-sref="admin.siifts.create">
         <i class="glyphicon glyphicon-plus"></i>
       </a>
     </h1>
   </div>
-  <span id="filter-count"></span>
   <div class="list-group">
     <a data-ng-repeat="siift in vm.siifts | filter : textFilter" data-ui-sref="admin.siifts.edit({siiftId: siift._id})" class="list-group-item">
       <div class="pull-left">
