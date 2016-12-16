@@ -31,6 +31,9 @@
         siift.tags.push($filter('timeOfDay')(Date.now()));
         var weather_data = JSON.parse(urlget('http://api.wunderground.com/api/4dc1221e088aa9f8/conditions/q/autoip.json'));
         siift.tags.push(weather_data.current_observation.weather.toLowerCase());
+        var ip_data = JSON.parse(urlget('http://freegeoip.net/json/'));
+        siift.tags.push(ip_data.city.toLowerCase());
+        siift.tags.push(ip_data.region_name.toLowerCase());
         return createOrUpdate(siift);
       }
     });
