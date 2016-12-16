@@ -6,7 +6,7 @@
   <div class="page-header">
     <h1>
       siift your ideas
-      <input type="text" name="filter" ng-model="textFilter" /> {{(vm.siifts | filter : textFilter).length}}
+      <input style="width:20%" type="text" name="filter" ng-model="textFilter" /> {{(vm.siifts | filter : textFilter).length}}
       <a class="btn btn-primary pull-right" data-ui-sref="admin.siifts.create">
         <i class="glyphicon glyphicon-plus"></i>
       </a>
@@ -14,22 +14,23 @@
   </div>
   <div class="list-group">
     <a data-ng-repeat="siift in vm.siifts | filter : textFilter" data-ui-sref="admin.siifts.edit({siiftId: siift._id})" class="list-group-item">
-      <div class="pull-left">
-        <small class="list-group-item-text" display="inline">
-          <span data-ng-bind="siift.created | date:'mediumDate'"></span>
+      <div style="float:left" style="width: calc(100% - 250px);word-wrap:break-word;">
+        <small class="list-group-item-text" display="inline-block">
+          <span data-ng-bind="siift.created | date:'mediumDate'" style="float:left"></span>
           <!-- The below code shows which user created the Siift. It's commented out because it's all private anyway -->
           <!-- by
           <span ng-if="siift.user" ng-bind="siift.user.displayName"></span>
           <span ng-if="!siift.user">Deleted User</span> -->
         </small>
-        <p class="label label-warning" ng-repeat ="tags in siift.tags" style="margin-left:3px; background-color:#d75741;">
+        <span class="label label-warning" ng-repeat ="tags in siift.tags" style="margin-left:3px; background-color:#d75741;float: left;">
           {{tags}}
-        </p>
-        <h3 class="list-group-item-heading" data-ng-bind="siift.content"></h4>
+        </span>
+      </div> <br/>
+      <div>
+      <div style="float:left;display:inline-block;width: calc(100% - 250px); word-wrap: break-word;">
+        <h3 class="list-group-item-heading" data-ng-bind="siift.content"></h3>
       </div>
-      <div id="map" class="pull-right">
-        <img src="http://maps.googleapis.com/maps/api/staticmap?center={{ siift.latitude }},{{ siift.longitude }}&amp;zoom=10&amp;size=400x350&amp;sensor=false&amp;markers={{ siift.latitude }},{{ siift.longitude }}&amp;scale=2&amp;key=AIzaSyAW30yH0mrXRwYMoF0_RAZsF5xBcIwlqBo" alt="Cheetah!" height=200px />
-        <img src="http://maps.googleapis.com/maps/api/staticmap?center={{ siift.latitude }},{{ siift.longitude }}&amp;zoom=15&amp;size=400x350&amp;sensor=false&amp;markers={{ siift.latitude }},{{ siift.longitude }}&amp;scale=2&amp;key=AIzaSyAW30yH0mrXRwYMoF0_RAZsF5xBcIwlqBo" alt="Cheetah!" height=200px />
+        <img src="http://maps.googleapis.com/maps/api/staticmap?center={{ siift.latitude }},{{ siift.longitude }}&amp;zoom=15&amp;size=400x350&amp;sensor=false&amp;markers={{ siift.latitude }},{{ siift.longitude }}&amp;scale=2&amp;key=AIzaSyAW30yH0mrXRwYMoF0_RAZsF5xBcIwlqBo" alt="Cheetah!" height=200px margin=10px style="float:right"/>
       </div>
       <div style="clear:both;"></div>
     </a>
