@@ -22,7 +22,7 @@
           <span ng-if="siift.user" ng-bind="siift.user.displayName"></span>
           <span ng-if="!siift.user">Deleted User</span> -->
         </small>
-        <p class="label label-warning" ng-repeat ="tags in siift.tags" style="margin-left:3px;">
+        <p class="label label-warning" ng-repeat ="tags in siift.tags" style="margin-left:3px; background-color:#d75741;">
           {{tags}}
         </p>
         <h3 class="list-group-item-heading" data-ng-bind="siift.content"></h4>
