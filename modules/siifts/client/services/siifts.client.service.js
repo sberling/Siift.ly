@@ -23,6 +23,37 @@
       return Httpreq.responseText;
     }
 
+    function getLocation(siift) {
+      // Handle successful response
+      function onSuccess(siift) {
+        // Any required internal processing from inside the service, goes here.
+      }
+
+      // Handle error response
+      function onError(errorResponse) {
+        var error = errorResponse.data;
+        // Handle error internally
+        handleError(error);
+      }
+
+      function handleError(error) {
+        // Log error
+        console.log(error);
+      }
+
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          function(position) {
+            siift.latitude = position.latitude;
+            siift.longitude = position.longitude;
+            siift.$update(onSuccess, onError);
+          }
+        );
+      } else {
+        console.log('location not implemented');
+      }
+    }
+
     angular.extend(Siift.prototype, {
       createOrUpdate: function () {
         var siift = this;
@@ -34,6 +65,8 @@
         var ip_data = JSON.parse(urlget('http://freegeoip.net/json/'));
         siift.tags.push(ip_data.city.toLowerCase());
         siift.tags.push(ip_data.region_name.toLowerCase());
+
+        getLocation(siift);
         return createOrUpdate(siift);
       }
     });
