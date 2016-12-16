@@ -20,7 +20,7 @@
         <!--TAGS are below, currently they are required, treated as a string, will need model cleanup-->
         <div class="form-group" show-errors>
           <label class="control-label" for="tags">Tags</label>
-          <input name="tags" type="text" ng-model="vm.siift.tags" id="tags" class="form-control" placeholder="Tags" required>
+          <input name="tags" type="text" ng-model="vm.siift.tags" ng-list id="tags" class="form-control" placeholder="Tags" required>
           <div ng-messages="vm.form.siiftForm.title.$error" role="alert">
             <p class="help-block error-text" ng-message="required">At least one tag is required.</p>
           </div>

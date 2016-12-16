@@ -9,7 +9,6 @@
 
   function SiiftsController($scope, siift, Authentication) {
     var vm = this;
-
     vm.siift = siift;
     vm.authentication = Authentication;
     vm.error = null;
